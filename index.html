@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=460, user-scalable=no">
+	<title>不是航途Route官网</title>
+	<script>
+		{
+			const location = window.location;
+			const pathname = location.pathname;
+			const raw = 'index.html';
+			const file = 'index.css?time=' + Date.now();
+			const link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.href = location.origin + (pathname.indexOf(raw) === -1 ? pathname + file : pathname.replace(raw, file));
+			link.onload = function () {
+				document.body.style.display = 'block';
+			};
+			document.head.appendChild(link);
+		}
+	</script>
+</head>
+<body style="display: none">
+	<h1 id="tipsText">音符与航线的交织</h1>
+	<div class="board" id="progress">
+		<h3 id="notice"></h3>
+		<progress id="progressbar" max="100"></progress>
+	</div>
+	<h1>来了解一下角色</h1>
+	<div class="board" id="character">
+		<script>
+			{
+				let scroll = 0;
+				const element = document.getElementById('character');
+				const scrollAmount = 460;
+
+				function scrollCharacter(more) {
+					if (more) {
+						const maxScroll = element.clientWidth;
+						if (scroll + scrollAmount > maxScroll) {
+							return;
+						}
+						scroll += scrollAmount;
+					}
+					else {
+						if (scroll - scrollAmount < 0) {
+							return;
+						}
+						scroll -= scrollAmount;
+					}
+					element.setAttribute('style', `transform: translateX(-${scroll}px) !important`);
+				}
+			}
+		</script>
+		<!--style="background-color:#9FC6D9;"-->
+		<div class="card">
+			<img src="character/guyun.png">
+			<div class="text">
+				<p class="title">孤云</p>
+				<p class="dest">「文学院」研讨组副组长</p>
+			</div>
+		</div>
+		<!--style="background-color:#E6DBA4;"-->
+		<div class="card">
+			<img src="character/weiyue.png">
+			<div class="text">
+				<p class="title">微月</p>
+				<p class="dest"></p>
+			</div>
+		</div>
+	</div>
+	<div class="scroll">
+		<button style="transform: rotate(180deg)" onclick="scrollCharacter(false)">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+				<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
+			</svg>
+		</button>
+		<button onclick="scrollCharacter(true)">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+				<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
+			</svg>
+		</button>
+	</div>
+	<h1>联系我们</h1>
+	<div class="board" id="QQ">
+		<script>
+			{
+				let scroll = 0;
+				const element = document.getElementById('QQ');
+				const scrollAmount = 460;
+
+				function scrollQQ(more) {
+					if (more) {
+						const maxScroll = element.clientWidth;
+						if (scroll + scrollAmount > maxScroll) {
+							return;
+						}
+						scroll += scrollAmount;
+					}
+					else {
+						if (scroll - scrollAmount < 0) {
+							return;
+						}
+						scroll -= scrollAmount;
+					}
+					element.setAttribute('style', `transform: translateX(-${scroll}px) !important`);
+				}
+			}
+		</script>
+		<div class="card">
+			<img src="qq_qrcode/group.png">
+			<div class="text">
+				<p class="title">紧跟时事</p>
+				<p class="dest">了解航途 Route 的最新消息。</p>
+			</div>
+		</div>
+		<div class="card">
+			<img src="qq_qrcode/channel.png">
+			<div class="text">
+				<p class="title">发散思维</p>
+				<p class="dest">向航途 Route 娓娓道来您的颅内高潮。</p>
+			</div>
+		</div>
+	</div>
+	<div class="scroll">
+		<button style="transform: rotate(180deg)" onclick="scrollQQ(false)">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+				<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
+			</svg>
+		</button>
+		<button onclick="scrollQQ(true)">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+				<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
+			</svg>
+		</button>
+	</div>
+	<!--<h1>开发组成员</h1>-->
+	<!--<div class="board" id="developer"></div>-->
+</body>
+<script>
+	{
+		const location = window.location;
+		const pathname = location.pathname;
+		const raw = 'index.html';
+		const file = 'index.js?time=' + Date.now();
+		fetch(location.origin + (pathname.indexOf(raw) === -1 ? pathname + file : pathname.replace(raw, file))).then(async r => {
+			eval(await r.text());
+		});
+	}
+</script>
+</html>
