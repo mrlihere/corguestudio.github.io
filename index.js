@@ -53,7 +53,7 @@
 		else {
 			++i;
 			const t = 1 - (i / 200);
-			noticeElement.textContent = `开发进度：${(progressElement.value = (1 - (t ** 5)) * 50.20).toFixed(2)}%`;
+			noticeElement.textContent = `开发进度：${(progressElement.value = (1 - (t ** 5)) * 50.21).toFixed(2)}%`;
 		}
 	}, 16);
 }
